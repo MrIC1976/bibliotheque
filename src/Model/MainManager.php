@@ -4,16 +4,10 @@ namespace App\Model;
 
 use PDO;
 
-require_once('Model.php');
-
-class MainManager extends Model
+class MainManager
 {
-    public function getData(): bool|array
+    public function getDb(): PDO
     {
-        $req = $this->getBdd()->prepare('SELECT * FROM matable');
-        $req->execute();
-        $datas = $req->fetchAll(PDO::FETCH_ASSOC);
-        $req->closeCursor();
-        return $datas;
+        return Model::getBdd()->connection;
     }
 }

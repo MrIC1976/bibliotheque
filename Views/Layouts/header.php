@@ -9,8 +9,8 @@
         <?php require_once 'menu.php'?>
 
         <div class="col-md-3 text-end">
-            <button type="button" class="btn btn-outline-primary me-2">Login</button>
-            <button type="button" class="btn btn-primary">Sign-up</button>
+            <?php if (!isset($_SESSION['user'])): ?><a type="button" href="<?= URL ?>connexion" class="btn btn-outline-primary me-2">Connexion</a><?php endif;?>
+            <?php if (isset($_SESSION['user'])): ?><a type="button" href="<?= URL ?>deconnexion" class="btn btn-primary">Deconnexion</a><?php endif;?>
         </div>
     </header>
 </div>
