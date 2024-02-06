@@ -3,10 +3,10 @@ namespace App\Model;
 
 abstract class MembreDecorator implements MembreInterface
 {
-    protected MembreInterface $Membre;
+    protected MembreInterface $reservation;
 
-    public function __construct(MembreInterface $Membre)
+    public function __construct(MembreInterface $reservation)
     {
-        $this->Membre = $Membre;
+        $this->reservation = $reservation;
     }
 }
