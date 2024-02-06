@@ -4,13 +4,14 @@ namespace App\Model;
 
 use ArrayAccess;
 
-class Livre implements ArrayAccess {
+class Livre implements ArrayAccess, Sujet{
 
-    public function __construct(array $datas) {
-        $this->container = $datas;
+    public function __construct(array $data)
+    {
+        $this->container = $data;
     }
-
-
+    private $observateurs = [];
+    private $statut;
     private $container = [
         "id"=> "",
         "titre"=> "",
@@ -39,5 +40,23 @@ class Livre implements ArrayAccess {
 
     public function offsetGet($offset): mixed {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
+    }
+    public function attacher(Observateur $observateur): void
+    {
+        $this->observateurs[] = $observateur;
+    }
+    public function detacher(Observateur $observateur): void
+    {
+        $key = array_search($observateur, $this->observateurs);
+        if($key !== false){
+            unset($this->observateurs[$key]);
+        }
+    }
+
+    public function notifier(): void
+    {
+        foreach($this->observateurs as $observateur){
+            $observateur->actualiser($this);
+        }
     }
 }
