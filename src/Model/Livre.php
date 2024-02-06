@@ -1,5 +1,7 @@
 <?php
+namespace App\Model;
 
+use ArrayAccess;
 class Livre implements ArrayAccess {
 
 
