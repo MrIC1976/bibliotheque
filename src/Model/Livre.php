@@ -7,6 +7,7 @@ use ArrayAccess;
 class Livre implements ArrayAccess, Sujet {
 
     private $observateurs = [];
+    private $statut;
     private $container = [
         "id"=> "",
         "titre"=> "",
