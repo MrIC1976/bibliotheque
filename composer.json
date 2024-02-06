@@ -1,0 +1,15 @@
+{
+    "name": "romai/bibliotheque",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "romainNgd",
+            "email": "romain.nigond@gmail.com"
+        }
+    ],
+    "require": {}
+}
