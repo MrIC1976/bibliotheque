@@ -1,4 +1,3 @@
-<?= password_hash('root', PASSWORD_DEFAULT) ?>
 <form class="mt-5" method="post" action="validate_connexion">
     <h1 class="h3 mb-3 fw-normal">Connectez-vous</h1>
 
