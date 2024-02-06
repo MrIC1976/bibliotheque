@@ -6,11 +6,11 @@ use PDO;
 
 require_once('Model.php');
 
-class MainManager extends Model
+class MainManager
 {
     public function getData(): bool|array
     {
-        $req = $this->getBdd()->prepare('SELECT * FROM matable');
+        $req = Model::getBdd()->connection->prepare('SELECT * FROM matable');
         $req->execute();
         $datas = $req->fetchAll(PDO::FETCH_ASSOC);
         $req->closeCursor();

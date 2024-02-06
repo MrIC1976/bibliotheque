@@ -3,8 +3,8 @@
 namespace App\model;
 use PDO;
 
-abstract class Model {
-    private static $pdo;
+class Model {
+    private static $pdo = null;
     public $connection;
 
     // Constructeur privé pour empêcher l'instanciation depuis l'extérieur de la classe
@@ -14,8 +14,8 @@ abstract class Model {
     }
 
     // Méthode statique pour récupérer l'instance unique de la classe Model
-    public static function getBdd() {
-        if (!isset(self::$pdo)) {
+    public static function getBdd(): self {
+        if (self::$pdo === null) {
             self::$pdo = new self();
         }
         return self::$pdo;
