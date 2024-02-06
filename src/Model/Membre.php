@@ -1,6 +1,15 @@
 <?php
+namespace App\Model;
+
+use ArrayAccess;
 
 class Membre implements ArrayAccess {
+
+    public function __construct(array $datas)
+    {
+        $this->container = $datas;
+    }
+
     private $container = [
         "id"=> "",
         "nom"=> "",

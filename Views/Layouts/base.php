@@ -3,7 +3,6 @@
 use App\Service\Toolbox;
 use App\Service\UrlFinder;
 
-
 ?>
 <!doctype html>
 <html data-bs-theme="dark">

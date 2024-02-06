@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Feb 06, 2024 at 09:57 AM
+-- Generation Time: Feb 06, 2024 at 01:09 PM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -69,6 +69,13 @@ CREATE TABLE `membre` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
+-- Dumping data for table `membre`
+--
+
+INSERT INTO `membre` (`id`, `nom`, `prenom`, `role`, `username`, `password`, `email`) VALUES
+(1, 'root', 'root', 'admin', 'root', '$2y$10$6sn5GaVV7m8wRLkMs/kOP.Hu3uHvPdMYZfJnKCO0WWT2oVJp5735O', 'root@gmail.com');
+
+--
 -- Indexes for dumped tables
 --
 
@@ -112,7 +119,7 @@ ALTER TABLE `livre`
 -- AUTO_INCREMENT for table `membre`
 --
 ALTER TABLE `membre`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Constraints for dumped tables
