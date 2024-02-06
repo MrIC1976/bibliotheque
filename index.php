@@ -1,6 +1,7 @@
 <?php
 require_once 'vendor/autoload.php';
 use App\Controller\MainController;
+use App\Service\UrlFinder;
 
 
 session_start();
@@ -15,12 +16,7 @@ $mainController = new MainController();
 
 
 try {
-    if (empty($_GET['page'])){
-        $page = 'accueil';
-    } else{
-        $url = explode('/', filter_var($_GET['page'], FILTER_SANITIZE_URL));
-        $page = $url[0];
-    }
+    $page = UrlFinder::getUrl();
     switch ($page){
         case 'accueil':
             $mainController->accueil();

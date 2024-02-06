@@ -1,6 +1,8 @@
 <?php
 
 use App\Service\Toolbox;
+use App\Service\UrlFinder;
+
 
 ?>
 <!doctype html>
@@ -17,7 +19,9 @@ use App\Service\Toolbox;
     <?php endforeach; endif;?>
 </head>
 <body>
-<?php if($page !== 'connexion'){ require_once 'header.php';}?>
+<?php
+$page = UrlFinder::getUrl();
+if($page !== 'connexion'){ require_once 'Views/Layouts/header.php';}?>
 
 <main class="container">
     <?php
@@ -30,7 +34,7 @@ use App\Service\Toolbox;
     <?= $page_content ?>
 </main>
 
-<?php if($page !== 'connexion'){ require_once 'footer.php';}?>
+<?php if($page !== 'connexion'){ require_once 'Views/Layouts/footer.php';}?>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 <script src="public/javascript/Navbar.js"></script>
 <?php if (!empty($page_js)) : foreach ($page_js as $fichier_js):?>
