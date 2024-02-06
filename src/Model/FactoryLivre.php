@@ -1,5 +1,5 @@
 <?php
-class LivreFactory{
+class FactoryLivre{
     public static function create(array $data): Livre{
         switch($data['isDigital']){
             case 0:
