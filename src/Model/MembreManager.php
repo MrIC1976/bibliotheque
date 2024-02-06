@@ -2,12 +2,19 @@
 
 namespace App\Model;
 
-use FactoryMembre;
-use Membre;
+use App\Service\Toolbox;
+use Composer\Autoload\ClassLoader;
 use PDO;
 
 class MembreManager extends MainManager
 {
+
+    private $toolbox;
+
+    public function __construct()
+    {
+        $this->toolbox = new Toolbox();
+    }
 
     public function getMembreOrNull(string $username): ?Membre
     {
@@ -25,7 +32,7 @@ class MembreManager extends MainManager
 
     public function passwordVerify(Membre $membre, string $password): bool
     {
-        return password_verify($password, $membre['password'], PASSWORD_DEFAULT);
+        return password_verify($password, $membre['password']);
     }
 
     public function connecte($username, $password): bool

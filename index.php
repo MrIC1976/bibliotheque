@@ -10,7 +10,9 @@ session_start();
 define("URL", str_replace("index.php","",(isset($_SERVER['HTTPS'])? "https" : "http").
     "://".$_SERVER['HTTP_HOST'].$_SERVER["PHP_SELF"]));
 
-$_SESSION['alerts'] = [];
+if (!is_array($_SESSION['alerts'])){
+    $_SESSION['alerts'] = [];
+}
 $mainController = new MainController();
 $securityController = new SecurityController();
 $membreManager = new \App\Model\MembreManager();

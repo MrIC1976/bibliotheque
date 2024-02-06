@@ -1,5 +1,6 @@
 <?php
+namespace App\Model;
+Class Bibliothecaire extends Membre{
 
-class Bibliothecaire extends Membre{
 
 }

@@ -1,4 +1,8 @@
 <?php
+namespace App\Model;
+
+use Exception;
+
 class FactoryLivre{
     public static function create(array $data): Livre{
         switch($data['isDigital']){
