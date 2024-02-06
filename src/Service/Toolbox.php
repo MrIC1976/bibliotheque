@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Service;
+use Exception;
+
 class Toolbox
 {
     public const GREEN = 'success';
@@ -24,7 +26,7 @@ class Toolbox
                         echo '<div role="alert" class="alert alert-info">' . $alert['message'] . '</div>';
                         break;
                     case self::GREEN :
-                        echo '<div role="alert" class="alert alerte-success">' . $alert['message'] . '</div>';
+                        echo '<div role="alert" class="alert alert-success">' . $alert['message'] . '</div>';
                         break;
                     case self::RED :
                         echo '<div role="alert" class="alert alert-danger">' . $alert['message'] . '</div>';

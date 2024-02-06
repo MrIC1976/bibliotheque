@@ -2,6 +2,8 @@
 
 namespace App\Model;
 
+use PDO;
+
 require_once('Model.php');
 
 class MainManager extends Model
