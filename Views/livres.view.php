@@ -10,7 +10,7 @@
     <thead>
         <tr>
             <th>N°</th>
-            <th><a href="<?= URL ?>livre_sort_title">Titre</a></th>
+            <th>Titre</th>
             <th>Auteur</th>
             <th>Description</th>
             <th>Poids</th>
