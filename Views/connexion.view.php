@@ -1,4 +1,4 @@
-<form class="mt-5" method="post" action="<?= URL ?>valideConnexion">
+<form class="mt-5" method="post" action="validate_connexion">
     <h1 class="h3 mb-3 fw-normal">Connectez-vous</h1>
 
     <div class="form-floating my-3">

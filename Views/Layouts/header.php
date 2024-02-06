@@ -10,7 +10,7 @@
 
         <div class="col-md-3 text-end">
             <a type="button" href="<?= URL ?>connexion" class="btn btn-outline-primary me-2">Connexion</a>
-            <a type="button" class="btn btn-primary">Sign-up</a>
+            <?php if (isset($_SESSION['user'])): ?><a type="button" href="<?= URL ?>deconnexion" class="btn btn-primary">Deconnexion</a><?php endif;?>
         </div>
     </header>
 </div>
