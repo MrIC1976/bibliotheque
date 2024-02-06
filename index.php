@@ -1,7 +1,9 @@
 <?php
 require_once 'vendor/autoload.php';
 use App\Controller\MainController;
+use App\Controller\MembreController;
 use App\Controller\SecurityController;
+use App\Model\MembreManager;
 use App\Service\SecurityService;
 use App\Service\Toolbox;
 use App\Service\UrlFinder;
@@ -15,7 +17,8 @@ if (!is_array($_SESSION['alerts'])){
 }
 $mainController = new MainController();
 $securityController = new SecurityController();
-$membreManager = new \App\Model\MembreManager();
+$membreController = new MembreController();
+$membreManager = new MembreManager();
 $toolbox = new Toolbox();
 
 try {
@@ -42,8 +45,25 @@ try {
         case 'deconnexion':
             $securityController->deconnexion();
             break;
-        case 'page1':
-            $mainController->page1();
+
+        case 'ajoutMembre':
+            $membreController->ajoutMembre();
+            break;
+        case 'validation_ajout_membre':
+            $membreController->validationAjoutMembre();
+            break;
+        case 'membre_list':
+            $membreController->membreList();
+            break;
+        case 'modifier_membre':
+            if (empty($_GET['username'])){
+                $toolbox->addAlert(Toolbox::RED, 'Petit filou va');
+                header('Location: ' . URL . "membre_list");
+            }
+            $membreController->modifierMembre();
+            break;
+        case 'validation_modifier_membre':
+            $membreController->validationModifierMembre();
             break;
         default:
             throw new Exception("Cette page n'exsite pas");

@@ -15,7 +15,7 @@ class SecurityService
         }
     }
 
-    public function isAdmin(): bool{
+    public static function isAdmin(): bool{
         if (self::isConnected() && $_SESSION['user'] instanceof Admin){
             return true;
         } else{
