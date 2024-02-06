@@ -6,12 +6,16 @@ use ArrayAccess;
 
 class Livre implements ArrayAccess {
 
+    public function __construct(array $datas) {
+        $this->container = $datas;
+    }
+
 
     private $container = [
         "id"=> "",
         "titre"=> "",
         "auteur"=> "",
-        "isDigital"=> "",
+        "type"=> "",
         "description"=> "",
         "poids"=> "",
         "date"=> "",
