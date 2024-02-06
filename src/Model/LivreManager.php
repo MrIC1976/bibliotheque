@@ -23,14 +23,12 @@ class LivreManager extends MainManager
         $req->execute();
         $datas = $req->fetchAll(PDO::FETCH_ASSOC);
         $req->closeCursor();
-        if (!$datas){
-            return null;
-        }else{
+        if ($datas){
             foreach ($datas as $data){
                 array_push($retour,FactoryLivre::create($data));
             }
-            return $retour;
         }
+        return $retour;
     }
 
     public function create(Livre $livre){
