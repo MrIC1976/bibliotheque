@@ -11,5 +11,8 @@
             "email": "romain.nigond@gmail.com"
         }
     ],
-    "require": {}
+    "require": {},
+    "config": {
+        "disable-tls": true
+    }
 }
