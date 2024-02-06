@@ -1,6 +1,9 @@
 <?php
+namespace App\Model;
 
-class MembreFactory{
+use App\Model\Membre as Membre;
+class FactoryMembre{
+    
     const ROLE_CLIENT = 'client';
     const ROLE_ADMIN = 'admin';
     const ROLE_BIBLIOTHECAIRE = 'bibliothecaire';

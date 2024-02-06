@@ -1,4 +1,7 @@
 <?php
+namespace App\Model;
+
+use ArrayAccess;
 
 class Membre implements ArrayAccess {
     private $container = [
