@@ -35,6 +35,7 @@ class Toolbox
                         throw new Exception("la couleur n'existe pas");
                 }
             }
+            $_SESSION['alerts'] = [];
         }
     }
 }
