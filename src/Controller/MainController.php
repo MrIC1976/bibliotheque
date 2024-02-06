@@ -49,7 +49,7 @@ class MainController extends Render
         $data_page = [
             'page_description' => "C'est la page d'acceuil d'erreur",
             'page_title' => 'Page erreur',
-            'view' => 'Views/Accueil/404.error.view.php',
+            'view' => 'Views/error.view.php',
             'template' => 'Views/Layouts/base.php',
             'msg' => $msg,
         ];
