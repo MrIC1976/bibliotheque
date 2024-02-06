@@ -1,6 +1,6 @@
 <?php
 
-class MembreFactory{
+class FactoryMembre{
     const ROLE_CLIENT = 'client';
     const ROLE_ADMIN = 'admin';
     const ROLE_BIBLIOTHECAIRE = 'bibliothecaire';
