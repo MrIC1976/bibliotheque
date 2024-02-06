@@ -1,6 +1,7 @@
 <?php
 require_once 'vendor/autoload.php';
 use App\Controller\MainController;
+use App\Controller\SecurityController;
 use App\Service\UrlFinder;
 
 session_start();
@@ -9,6 +10,7 @@ define("URL", str_replace("index.php","",(isset($_SERVER['HTTPS'])? "https" : "h
 
 $_SESSION['alerts'] = [];
 $mainController = new MainController();
+$securityController = new SecurityController();
 
 
 
@@ -18,6 +20,12 @@ try {
     switch ($page){
         case 'accueil':
             $mainController->accueil();
+            break;
+        case 'connexion':
+            $securityController->connexion();
+            break;
+        case 'valideConnexion':
+            $securityController->valideConnexion();
             break;
         case 'page1':
             $mainController->page1();
