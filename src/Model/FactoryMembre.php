@@ -1,7 +1,6 @@
 <?php
 namespace App\Model;
 
-use App\Model\Membre as Membre;
 class FactoryMembre{
     
     const ROLE_CLIENT = 'client';
