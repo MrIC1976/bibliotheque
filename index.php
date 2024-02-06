@@ -5,6 +5,7 @@ use App\Controller\SecurityController;
 use App\Service\SecurityService;
 use App\Service\Toolbox;
 use App\Service\UrlFinder;
+use App\Controller\LivreController;
 
 session_start();
 define("URL", str_replace("index.php","",(isset($_SERVER['HTTPS'])? "https" : "http").
@@ -14,6 +15,7 @@ if (!is_array($_SESSION['alerts'])){
     $_SESSION['alerts'] = [];
 }
 $mainController = new MainController();
+$livreController = new LivreController();
 $securityController = new SecurityController();
 $membreManager = new \App\Model\MembreManager();
 $toolbox = new Toolbox();
@@ -44,6 +46,18 @@ try {
             break;
         case 'page1':
             $mainController->page1();
+            break;
+        case 'livre':
+            $livreController->index();
+            break;
+        case 'livre_create':
+            $livreController->create();
+            break;
+        case 'validation_ajout_livre':
+            $livreController->validationCreationLivre();
+            break;
+        case 'livre_sort_title':
+            $livreController->trierLivresParTitre();
             break;
         default:
             throw new Exception("Cette page n'exsite pas");

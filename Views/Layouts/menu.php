@@ -2,6 +2,6 @@
     <li><a href="<?= URL ?>accueil" class="nav-link px-2 link-secondary">Home</a></li>
     <li><a href="<?= URL ?>page1" class="nav-link px-2">Page 1</a></li>
     <li><a href="#" class="nav-link px-2">Pricing</a></li>
-    <li><a href="#" class="nav-link px-2">FAQs</a></li>
+    <li><a href="<?= URL ?>livre" class="nav-link px-2">Livres</a></li>
     <li><a href="#" class="nav-link px-2">About</a></li>
 </ul>
