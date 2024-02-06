@@ -33,7 +33,7 @@ class MainController extends Render
     public function page1()
     {
         $this->toolbox->addAlert(Toolbox::GREEN, 'alerte affiché avec succès');
-        $data = $this->mainManager->getData();
+        $data = $this->mainManager->getDb();
         $data_page = [
             'page_description' => "C'est la page 1",
             'page_title' => 'Page 1',
