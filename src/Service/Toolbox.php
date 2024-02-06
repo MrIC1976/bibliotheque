@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Service;
+use Exception;
+
 class Toolbox
 {
     public const GREEN = 'success';
